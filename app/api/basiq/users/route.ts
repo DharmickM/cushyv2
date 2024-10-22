@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
-        'basiq-version': '2.0'
+        'basiq-version': '3.0'
       }
     });
 

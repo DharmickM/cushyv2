@@ -12,7 +12,7 @@ export async function GET(
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',
-        'basiq-version': '2.0'
+        'basiq-version': '3.0'
       }
     });
 
