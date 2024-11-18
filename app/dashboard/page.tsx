@@ -11,7 +11,7 @@ import { ErrorBoundary } from "@/components/error-boundary"
 export default function Dashboard() {
   return (
     <div className="space-y-4">
-      <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+      <h2 className="text-3xl font-bold tracking-tight"></h2>
       <Tabs defaultValue="overview" className="space-y-4">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>

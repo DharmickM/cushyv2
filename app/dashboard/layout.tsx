@@ -23,7 +23,7 @@ export default function DashboardLayout({
   }, []);
 
   return (
-    <div className="flex h-[calc(100vh-3.5rem)] overflow-hidden">
+    <div className="flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full border-t border-neutral-200 dark:border-neutral-700 overflow-hidden min-h-[calc(100vh-3.5rem)]">
       <SidebarDemo open={sidebarOpen} setOpen={setSidebarOpen} />
       <div className="flex-1 flex flex-col overflow-hidden">
         <div className="flex items-center p-4 md:hidden">
@@ -35,7 +35,7 @@ export default function DashboardLayout({
             <Menu className="h-4 w-4" />
           </Button>
         </div>
-        <main className="flex-1 overflow-y-auto p-4 md:p-8">
+        <main className="flex-1 overflow-y-auto p-4 md:p-8 bg-white dark:bg-neutral-900 rounded-tl-2xl border-t border-l border-neutral-200 dark:border-neutral-700">
           {children}
         </main>
       </div>
