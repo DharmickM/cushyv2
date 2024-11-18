@@ -12,4 +12,4 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next()
 }
 
-export const config = { matcher: ["/dashboard", "/settings", "/accounts"] }
+export const config = { matcher: ["/settings"] }

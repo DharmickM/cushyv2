@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { Sidebar } from "@/components/layout/sidebar"
+import { SidebarDemo } from "@/components/layout/sidebar2"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 
@@ -24,7 +24,7 @@ export default function DashboardLayout({
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)] overflow-hidden">
-      <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
+      <SidebarDemo open={sidebarOpen} setOpen={setSidebarOpen} />
       <div className="flex-1 flex flex-col overflow-hidden">
         <div className="flex items-center p-4 md:hidden">
           <Button
