@@ -1,15 +1,24 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-import { getToken } from 'next-auth/jwt'
+// export default function middleware() {
+//   // This middleware does nothing
+// }
 
-export async function middleware(request: NextRequest) {
-  const token = await getToken({ req: request })
+// // You can still keep the config if needed
+// // export const config = { matcher: ["/settings"] }
+import { withAuth } from "next-auth/middleware"
 
-  if (!token) {
-    return NextResponse.redirect(new URL('/auth/signin', request.url))
+export default withAuth(
+  // `withAuth` augments your `Request` with the user's token.
+  function middleware(req) {
+    console.log(req.nextauth.token)
+  },
+  {
+    callbacks: {
+      authorized: ({ token }) => !!token
+    },
   }
+)
 
-  return NextResponse.next()
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
 }
 
-export const config = { matcher: ["/settings"] }
