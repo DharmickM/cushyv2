@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Overview } from "@/components/dashboard/overview"
 import { RecentTransactions } from "@/components/dashboard/recent-transactions"
 import { FinancialHealthMetrics } from "@/components/dashboard/financial-health-metrics"
-import { NetWorthChart } from "@/components/dashboard/net-worth-chart"
+import  NetWorthChart from "@/components/dashboard/net-worth-chart"
 import { ErrorBoundary } from "@/components/error-boundary"
 
 export default function Dashboard() {
@@ -29,6 +29,7 @@ export default function Dashboard() {
                 <CardTitle>Net Worth</CardTitle>
               </CardHeader>
               <CardContent className="h-[400px]">
+             
                 <ErrorBoundary fallback={<div>Error loading net worth chart</div>}>
                   <NetWorthChart />
                 </ErrorBoundary>

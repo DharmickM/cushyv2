@@ -16,19 +16,23 @@ const formatYAxis = (value: number) => {
   return `$${value.toLocaleString()}`;
 };
 
-export function NetWorthChart() {
+export default function NetWorthChart() {
+  console.log("NetWorthChart is rendering");
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis tickFormatter={formatYAxis} />
-        <Tooltip formatter={(value) => `$${Number(value).toLocaleString()}`} />
-        <Legend />
-        <Line type="monotone" dataKey="Assets" stroke="#8884d8" />
-        <Line type="monotone" dataKey="Liabilities" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="NetWorth" stroke="#ffc658" />
-      </LineChart>
-    </ResponsiveContainer>
+    <div style={{ width: '100%', height: '400px' }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis tickFormatter={formatYAxis} />
+          <Tooltip formatter={(value) => `$${Number(value).toLocaleString()}`} />
+          <Legend />
+          <Line type="monotone" dataKey="Assets" stroke="#8884d8" />
+          <Line type="monotone" dataKey="Liabilities" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="NetWorth" stroke="#ffc658" />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
+
